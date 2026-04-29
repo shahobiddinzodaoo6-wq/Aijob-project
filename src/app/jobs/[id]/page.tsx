@@ -16,6 +16,12 @@ import { getApiError } from "@/lib/axios";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
+
+
+
+
+
+
 export default function JobDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const { user, isAuthenticated } = useAuthStore();
@@ -187,3 +193,5 @@ export default function JobDetailPage({ params }: { params: Promise<{ id: string
     </div>
   );
 }
+
+
