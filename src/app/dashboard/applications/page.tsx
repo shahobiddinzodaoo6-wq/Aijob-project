@@ -19,9 +19,12 @@ import type { ApplicationStatus, JobApplication } from "@/types/job";
 const statusVariant: Record<ApplicationStatus, "warning"|"info"|"success"|"danger"> = {
   Pending: "warning", Reviewed: "info", Accepted: "success", Rejected: "danger",
 };
+
 const statusLabel: Record<ApplicationStatus, string> = {
   Pending: "На рассмотрении", Reviewed: "Просмотрено", Accepted: "Принято", Rejected: "Отклонено",
 };
+
+
 
 export default function ApplicationsPage() {
   const { user } = useAuthStore();

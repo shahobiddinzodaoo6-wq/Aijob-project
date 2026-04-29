@@ -17,10 +17,14 @@ import { useEffect, useState } from "react";
 import { User, Upload, Plus, Trash2, Briefcase, GraduationCap, Star, Globe, MapPin, Link2 } from "lucide-react";
 import type { UserExperience, UserEducation } from "@/types/user";
 
+
+
 export default function ProfilePage() {
   const { user } = useAuthStore();
   const qc = useQueryClient();
 
+
+  
   const { data: profile, isLoading } = useQuery({
     queryKey: ["profile", user?.id],
     queryFn: () => userService.getProfileByUser(user!.id),

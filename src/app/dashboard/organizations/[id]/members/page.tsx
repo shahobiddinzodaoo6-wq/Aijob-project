@@ -14,15 +14,18 @@ import { getApiError } from "@/lib/axios";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 
+
 export default function MembersPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const qc = useQueryClient();
   const [inviteOpen, setInviteOpen] = useState(false);
 
+
   const { data: members, isLoading } = useQuery({
     queryKey: ["org-members", id],
     queryFn: () => jobService.getOrgMembers(Number(id)),
   });
+
 
   const { register, handleSubmit, reset, formState: { isSubmitting } } = useForm<{ userId: string; role: string }>();
 
@@ -85,6 +88,7 @@ export default function MembersPage({ params }: { params: Promise<{ id: string }
           </Card>
         ))}
       </div>
+      
 
       <Modal open={inviteOpen} onClose={() => setInviteOpen(false)} title="Даъвати иштирокчӣ">
         <form onSubmit={handleSubmit((d) => inviteMutation.mutate(d))} className="space-y-4">
@@ -99,3 +103,4 @@ export default function MembersPage({ params }: { params: Promise<{ id: string }
     </div>
   );
 }
+

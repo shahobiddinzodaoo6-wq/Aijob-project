@@ -16,18 +16,25 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import type { Organization } from "@/types/job";
 
+
 export default function OrganizationsPage() {
   const qc = useQueryClient();
   const [createOpen, setCreateOpen] = useState(false);
   const [editOrg, setEditOrg] = useState<Organization | null>(null);
+
 
   const { data: orgs, isLoading } = useQuery({
     queryKey: ["my-orgs"],
     queryFn: jobService.getMyOrganizations,
   });
 
+
+
   const { register, handleSubmit, reset, formState: { isSubmitting } } = useForm<Partial<Organization>>();
 
+
+
+  
   const createMutation = useMutation({
     mutationFn: jobService.createOrganization,
     onSuccess: () => { toast.success("Ширкат сохта шуд!"); qc.invalidateQueries({ queryKey: ["my-orgs"] }); setCreateOpen(false); reset(); },
