@@ -24,7 +24,7 @@ export default function ProfilePage() {
   const qc = useQueryClient();
 
 
-  
+
   const { data: profile, isLoading } = useQuery({
     queryKey: ["profile", user?.id],
     queryFn: () => userService.getProfileByUser(user!.id),
@@ -252,6 +252,10 @@ export default function ProfilePage() {
         </CardBody>
       </Card>
 
+
+
+
+
       {/* Education */}
       <Card>
         <CardHeader>
@@ -288,6 +292,9 @@ export default function ProfilePage() {
         </CardBody>
       </Card>
 
+
+
+
       {/* Add Experience Modal */}
       <Modal open={expOpen} onClose={() => setExpOpen(false)} title="Иловаи таҷрибаи корӣ">
         <form onSubmit={expForm.handleSubmit((d) => createExpMutation.mutate(d))} className="space-y-4">
@@ -309,6 +316,9 @@ export default function ProfilePage() {
         </form>
       </Modal>
 
+
+
+
       {/* Add Education Modal */}
       <Modal open={eduOpen} onClose={() => setEduOpen(false)} title="Иловаи таҳсилот">
         <form onSubmit={eduForm.handleSubmit((d) => createEduMutation.mutate(d))} className="space-y-4">
@@ -328,3 +338,6 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+
+

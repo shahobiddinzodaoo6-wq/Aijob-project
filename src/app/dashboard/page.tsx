@@ -12,6 +12,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+
+
+
 export default function DashboardPage() {
   const { user } = useAuthStore();
   const isOrg = user?.role === "Organization";
@@ -60,6 +63,8 @@ export default function DashboardPage() {
             </div>
           </div>
 
+
+
           {unread > 0 && (
             <Link href="/notifications" className="inline-flex items-center gap-2 bg-accent/50 border border-border rounded-xl px-4 py-2 text-sm font-bold text-primary hover:bg-accent transition-all shadow-sm">
               <Bell size={16} fill="currentColor" />
@@ -68,6 +73,7 @@ export default function DashboardPage() {
           )}
         </div>
       </div>
+
 
       {/* Quick Stats Grid */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -90,6 +96,8 @@ export default function DashboardPage() {
           </Link>
         ))}
       </div>
+
+
 
       {/* Actions & AI */}
       <div className="grid lg:grid-cols-5 gap-6">
@@ -123,6 +131,10 @@ export default function DashboardPage() {
           </div>
         </div>
 
+
+
+
+
         {/* AI Powered Promo */}
         <div className="lg:col-span-2 card bg-foreground text-background relative overflow-hidden flex flex-col">
           <div className="absolute top-0 right-0 w-40 h-40 bg-primary/20 rounded-full blur-[60px]" />
@@ -155,6 +167,9 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
+
+
+
 
       {/* Recent Notifications Table/List */}
       {notifs?.items && notifs.items.length > 0 && (
@@ -190,3 +205,7 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+
+
+

@@ -15,6 +15,10 @@ import { getApiError } from "@/lib/axios";
 import { clsx } from "clsx";
 import type { Post } from "@/types/social";
 
+
+
+
+
 function PostCard({ post, onLike, onRepost, onDelete, currentUserId }: {
   post: Post;
   onLike: (id: string) => void;
@@ -38,7 +42,14 @@ function PostCard({ post, onLike, onRepost, onDelete, currentUserId }: {
     onError: (e) => toast.error(getApiError(e)),
   });
 
+
+
+
   const initials = post.author?.fullName?.[0] ?? post.author?.firstName?.[0] ?? "?";
+
+
+
+
 
   return (
     <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-md transition-shadow">
@@ -139,6 +150,11 @@ function PostCard({ post, onLike, onRepost, onDelete, currentUserId }: {
   );
 }
 
+
+
+
+
+
 function FeedContent() {
   const { user } = useAuthStore();
   const qc = useQueryClient();
@@ -150,6 +166,11 @@ function FeedContent() {
     queryKey: ["posts"],
     queryFn: () => socialService.getPosts(),
   });
+
+
+
+
+
 
   const createMutation = useMutation({
     mutationFn: (content: string) => socialService.createPost({ content, imageUrl: imageUrl.trim() || undefined }),
@@ -191,6 +212,12 @@ function FeedContent() {
     onSuccess: () => { toast.success("Нобуд карда шуд"); qc.invalidateQueries({ queryKey: ["posts"] }); },
     onError: (e) => toast.error(getApiError(e)),
   });
+
+
+
+
+
+
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -268,6 +295,12 @@ function FeedContent() {
   );
 }
 
+
 export default function FeedPage() {
   return <AuthGuard><FeedContent /></AuthGuard>;
 }
+
+
+
+
+
