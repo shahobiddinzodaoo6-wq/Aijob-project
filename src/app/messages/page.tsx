@@ -1,4 +1,6 @@
 "use client";
+
+
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { socialService } from "@/services/social.service";
@@ -30,6 +32,9 @@ function getInitials(u?: User | null): string {
     : n.slice(0, 2).toUpperCase();
 }
 
+
+
+
 function formatTime(iso?: string): string {
   if (!iso) return "";
   const d = new Date(iso);
@@ -41,6 +46,7 @@ function formatTime(iso?: string): string {
     return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   return d.toLocaleDateString([], { month: "short", day: "numeric" });
 }
+
 
 function formatMsgTime(iso?: string): string {
   if (!iso) return "";

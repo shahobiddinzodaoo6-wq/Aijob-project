@@ -26,6 +26,10 @@ export interface AiAnalyzeCvResponse {
   sourceTextPreview: string;
 }
 
+
+
+
+
 export interface AiSkillGapResponse {
   matchScore: number;
   fitSummary: string;

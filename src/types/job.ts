@@ -25,6 +25,11 @@ export interface JobSkill {
   skill: { id: string; name: string };
 }
 
+
+
+
+
+
 export interface JobCategory {
   id: string;
   name: string;

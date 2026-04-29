@@ -21,6 +21,10 @@ export interface Comment {
   author?: import("./user").User;
 }
 
+
+
+
+
 export interface Connection {
   id: string;
   requesterId: string;
