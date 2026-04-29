@@ -13,6 +13,9 @@ import { Mail, Lock, User, Zap, Building2, CheckCircle, Phone } from "lucide-rea
 import { useState } from "react";
 import { clsx } from "clsx";
 
+
+
+
 const schema = z.object({
     fullName: z.string().min(2, "Name must be at least 2 characters"),
     phoneNumber: z.string().min(6, "Invalid phone number"),
@@ -21,6 +24,9 @@ const schema = z.object({
     role: z.enum(["Candidate", "Organization"]),
 });
 type F = z.infer<typeof schema>;
+
+
+
 
 export default function RegisterPage() {
     const { register: authRegister } = useAuth();
@@ -110,3 +116,6 @@ export default function RegisterPage() {
         </div>
     );
 }
+
+
+

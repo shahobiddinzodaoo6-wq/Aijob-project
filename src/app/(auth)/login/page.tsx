@@ -11,11 +11,17 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Mail, Lock, Zap } from "lucide-react";
 
+
+
 const schema = z.object({
   email: z.string().email("Invalid email address"),
   password: z.string().min(6, "Password must be at least 6 characters"),
 });
 type F = z.infer<typeof schema>;
+
+
+
+
 
 export default function LoginPage() {
   const { login } = useAuth();
@@ -89,3 +95,10 @@ export default function LoginPage() {
     </div>
   );
 }
+
+
+
+
+
+
+
