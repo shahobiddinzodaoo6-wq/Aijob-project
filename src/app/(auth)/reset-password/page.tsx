@@ -12,11 +12,17 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Briefcase, Lock, CheckCircle } from "lucide-react";
 import { Suspense, useState } from "react";
 
+
+
+
 const schema = z.object({
   newPassword: z.string().min(6, "Минимум 6 символов"),
   confirm: z.string(),
 }).refine((d) => d.newPassword === d.confirm, { message: "Пароли не совпадают", path: ["confirm"] });
 type FormData = z.infer<typeof schema>;
+
+
+
 
 function ResetForm() {
   const router = useRouter();
@@ -104,3 +110,6 @@ export default function ResetPasswordPage() {
     </div>
   );
 }
+
+
+

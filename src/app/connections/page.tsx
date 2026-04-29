@@ -13,6 +13,10 @@ import toast from "react-hot-toast";
 import { getApiError } from "@/lib/axios";
 import { clsx } from "clsx";
 
+
+
+
+
 function ConnectionsContent() {
   const qc = useQueryClient();
   const [email, setEmail] = useState("");
@@ -176,6 +180,11 @@ function ConnectionsContent() {
   );
 }
 
+
 export default function ConnectionsPage() {
   return <AuthGuard><ConnectionsContent /></AuthGuard>;
 }
+
+
+
+

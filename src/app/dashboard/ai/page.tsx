@@ -20,6 +20,9 @@ import type {
     AiSkillGapResponse 
 } from "@/types/ai";
 
+
+
+
 function ResultBox({ text, label }: { text: string; label: string }) {
   const [copied, setCopied] = useState(false);
   function copy() {
@@ -40,6 +43,9 @@ function ResultBox({ text, label }: { text: string; label: string }) {
   );
 }
 
+
+
+
 function AiTool({ icon, title, color, children }: { icon: React.ReactNode; title: string; color: string; children: React.ReactNode }) {
   return (
     <Card>
@@ -53,6 +59,8 @@ function AiTool({ icon, title, color, children }: { icon: React.ReactNode; title
     </Card>
   );
 }
+
+
 
 function AiContent() {
   const { user } = useAuthStore();
@@ -184,6 +192,8 @@ function AiContent() {
               )}
             </AiTool>
 
+            
+
             {/* Skill Gap */}
             <AiTool icon={<Target size={22} className="text-cyan-500"/>} title="Skill Gap Analyst" color="bg-cyan-500/10">
               <Input label="Job ID" placeholder="Enter target job ID" type="number" value={gapJobId} onChange={(e) => setGapJobId(e.target.value)} />
@@ -226,6 +236,8 @@ function AiContent() {
                 </div>
               )}
             </AiTool>
+
+
 
             {/* Cover Letter */}
             <AiTool icon={<Edit size={22} className="text-emerald-500"/>} title="Cover Letter Draft" color="bg-emerald-500/10">
@@ -283,6 +295,8 @@ function AiContent() {
           </>
         )}
 
+
+
         {isOrg && (
           <AiTool icon={<Briefcase size={22} className="text-indigo-600"/>} title="Job Optimizer" color="bg-indigo-500/10">
             <Input label="Reference Job ID (optional)" value={jobId} onChange={(e) => setJobId(e.target.value)} />
@@ -329,6 +343,8 @@ function AiContent() {
   );
 }
 
+
+
 export default function AiPage() {
   return (
     <Suspense fallback={<div className="flex items-center justify-center min-h-[300px]"><div className="animate-spin h-8 w-8 border-4 border-indigo-500 border-t-transparent rounded-full"/></div>}>
@@ -336,3 +352,6 @@ export default function AiPage() {
     </Suspense>
   );
 }
+
+
+

@@ -1,5 +1,6 @@
 "use client";
 
+
 import React, { useState } from "react";
 import { 
   Sparkles, 
@@ -32,6 +33,7 @@ interface Message {
   content: string | any;
   type?: "text" | "analysis";
 }
+
 
 export default function AiPage() {
   const [activeTool, setActiveTool] = useState<ToolType>("ask");
@@ -154,10 +156,14 @@ export default function AiPage() {
             </div>
           </div>
           
+
+
           <Badge variant="outline" className="bg-primary/5 text-primary border-primary/20 px-3 py-1">
             <Sparkles size={12} className="mr-1.5" /> AI Online
           </Badge>
         </header>
+
+
 
         {/* Chat / Content */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-hide">
@@ -405,3 +411,17 @@ function CvAnalysisView({ data }: { data: any }) {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
