@@ -25,6 +25,10 @@ export default function JobsPage() {
     queryFn: () => jobService.getJobsPaged({ query, location, type, page, pageSize: 12 }),
   });
 
+
+
+
+
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -150,3 +154,9 @@ export default function JobsPage() {
     </div>
   );
 }
+
+
+
+
+
+
