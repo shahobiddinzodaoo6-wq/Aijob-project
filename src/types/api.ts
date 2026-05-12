@@ -14,10 +14,13 @@ export interface PagedResponse<T> {
   hasPrevious: boolean;
 }
 
+
+
 export interface ApiError {
   statusCode: number;
   description: string[];
 }
+
 
 
 

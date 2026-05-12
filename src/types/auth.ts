@@ -18,15 +18,14 @@ export interface AuthTokens {
   refreshToken: string;
 }
 
+
+
 export interface AuthUser {
   id: string;
   email: string;
   fullName: string;
   role: UserRole;
 }
-
-
-
 
 
 export interface ForgotPasswordRequest {
@@ -42,3 +41,5 @@ export interface ResetPasswordRequest {
 export interface RefreshTokenRequest {
   refreshToken: string;
 }
+
+

@@ -30,6 +30,7 @@ export interface AiAnalyzeCvResponse {
 
 
 
+
 export interface AiSkillGapResponse {
   matchScore: number;
   fitSummary: string;
@@ -47,6 +48,8 @@ export interface AiImproveJobRequest {
   applyToJob: boolean;
 }
 
+
+
 export interface AiImproveJobResponse {
   improvedTitle: string;
   improvedDescription: string;
@@ -62,6 +65,8 @@ export interface AiDraftRequest {
   extraContext?: string;
 }
 
+
+
 export interface AiDraftMessageRequest {
   userId?: number;
   jobId?: number;
@@ -71,7 +76,11 @@ export interface AiDraftMessageRequest {
   extraContext?: string;
 }
 
+
+
 export interface AiDraftResponse {
   subject: string;
   content: string;
 }
+
+

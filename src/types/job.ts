@@ -26,14 +26,12 @@ export interface JobSkill {
 }
 
 
-
-
-
-
 export interface JobCategory {
   id: string;
   name: string;
 }
+
+
 
 export interface JobApplication {
   id: string;
@@ -77,3 +75,4 @@ export interface JobSearchParams {
   page?: number;
   pageSize?: number;
 }
+
