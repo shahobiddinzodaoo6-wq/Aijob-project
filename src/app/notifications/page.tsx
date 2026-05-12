@@ -11,13 +11,18 @@ import { getApiError } from "@/lib/axios";
 import { clsx } from "clsx";
 import { useState } from "react";
 
+
+
 import { notificationService } from "@/services/notification.service";
 import { useAuthStore } from "@/store/AuthStore";
+
+
 
 function NotificationsContent() {
     const { user } = useAuthStore();
     const qc = useQueryClient();
     const [page, setPage] = useState(1);
+
 
     const { data, isLoading } = useQuery({
         queryKey: ["notifications", user?.id, page],
@@ -29,10 +34,14 @@ function NotificationsContent() {
         enabled: !!user,
     });
 
+
+
     const readMutation = useMutation({
         mutationFn: (id: number) => notificationService.markRead(id),
         onSuccess: () => qc.invalidateQueries({ queryKey: ["notifications"] }),
     });
+
+
 
     const deleteMutation = useMutation({
         mutationFn: (id: number) => notificationService.delete(id),
@@ -44,6 +53,8 @@ function NotificationsContent() {
     });
 
     const unread = data?.items?.filter((n) => !n.isRead) ?? [];
+
+
 
     return (
         <div className="min-h-screen bg-background">
@@ -127,6 +138,9 @@ function NotificationsContent() {
     );
 }
 
+
 export default function NotificationsPage() {
     return <AuthGuard><NotificationsContent /></AuthGuard>;
 }
+
+
