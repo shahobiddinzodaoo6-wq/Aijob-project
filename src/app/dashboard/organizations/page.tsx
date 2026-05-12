@@ -23,6 +23,8 @@ export default function OrganizationsPage() {
   const [editOrg, setEditOrg] = useState<Organization | null>(null);
 
 
+
+
   const { data: orgs, isLoading } = useQuery({
     queryKey: ["my-orgs"],
     queryFn: jobService.getMyOrganizations,
@@ -30,10 +32,12 @@ export default function OrganizationsPage() {
 
 
 
+
   const { register, handleSubmit, reset, formState: { isSubmitting } } = useForm<Partial<Organization>>();
 
 
 
+  
   
   const createMutation = useMutation({
     mutationFn: jobService.createOrganization,

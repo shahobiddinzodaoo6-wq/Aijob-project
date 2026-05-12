@@ -90,6 +90,8 @@ export default function MembersPage({ params }: { params: Promise<{ id: string }
       </div>
       
 
+
+
       <Modal open={inviteOpen} onClose={() => setInviteOpen(false)} title="Даъвати иштирокчӣ">
         <form onSubmit={handleSubmit((d) => inviteMutation.mutate(d))} className="space-y-4">
           <Input label="ID-и корбар" placeholder="ID-и номзадро ворид кунед..." {...register("userId")} />
@@ -103,4 +105,6 @@ export default function MembersPage({ params }: { params: Promise<{ id: string }
     </div>
   );
 }
+
+
 

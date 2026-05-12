@@ -16,9 +16,13 @@ import toast from "react-hot-toast";
 import { getApiError } from "@/lib/axios";
 import type { ApplicationStatus, JobApplication } from "@/types/job";
 
+
+
 const statusVariant: Record<ApplicationStatus, "warning"|"info"|"success"|"danger"> = {
   Pending: "warning", Reviewed: "info", Accepted: "success", Rejected: "danger",
 };
+
+
 
 const statusLabel: Record<ApplicationStatus, string> = {
   Pending: "На рассмотрении", Reviewed: "Просмотрено", Accepted: "Принято", Rejected: "Отклонено",
