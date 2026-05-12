@@ -12,6 +12,8 @@ export interface Post {
   author?: import("./user").User;
 }
 
+
+
 export interface Comment {
   id: string;
   postId: string;
@@ -20,6 +22,7 @@ export interface Comment {
   createdAt: string;
   author?: import("./user").User;
 }
+
 
 
 
@@ -35,6 +38,8 @@ export interface Connection {
   addressee?: import("./user").User;
 }
 
+
+
 export type ConnectionStatus = "Pending" | "Accepted" | "Rejected";
 
 export interface Conversation {
@@ -49,6 +54,8 @@ export interface Conversation {
   otherUser?: import("./user").User;
 }
 
+
+
 export interface Message {
   id: number;
   conversationId: number;
@@ -58,6 +65,8 @@ export interface Message {
   createdAt?: string;
   sender?: import("./user").User;
 }
+
+
 
 export interface Notification {
   id: number;
