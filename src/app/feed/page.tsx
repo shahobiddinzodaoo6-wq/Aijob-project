@@ -296,6 +296,7 @@ function FeedContent() {
 }
 
 
+
 export default function FeedPage() {
   return <AuthGuard><FeedContent /></AuthGuard>;
 }

@@ -172,6 +172,7 @@ export default function JobDetailPage({ params }: { params: Promise<{ id: string
         </div>
       </div>
 
+
       <Modal open={applyOpen} onClose={() => setApplyOpen(false)} title="Дархост ба вакансия" description={job.title}>
         <form onSubmit={handleSubmit((d) => applyMutation.mutate(d))} className="space-y-4">
           <div className="flex items-center justify-between">
