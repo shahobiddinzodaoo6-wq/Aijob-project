@@ -383,6 +383,8 @@ function CvAnalysisView({ data }: { data: any }) {
         </div>
       </div>
 
+
+
       <div className="bg-accent/20 p-4 rounded-xl border border-border/50">
         <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-4 text-primary">Resume Optimization</h4>
         <div className="grid md:grid-cols-3 gap-4">

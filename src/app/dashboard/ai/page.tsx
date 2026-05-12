@@ -263,6 +263,9 @@ function AiContent() {
               {coverResult && <ResultBox text={coverResult.content} label={coverResult.subject} />}
             </AiTool>
 
+
+
+
             {/* Message Draft */}
             <AiTool icon={<MessageSquare size={22} className="text-amber-500"/>} title="Networking Message" color="bg-amber-500/10">
                <div className="grid grid-cols-2 gap-3">
@@ -294,6 +297,9 @@ function AiContent() {
             </AiTool>
           </>
         )}
+
+
+
 
 
 
