@@ -37,7 +37,7 @@ export default function OrganizationsPage() {
 
 
 
-  
+
   
   const createMutation = useMutation({
     mutationFn: jobService.createOrganization,
@@ -56,6 +56,7 @@ export default function OrganizationsPage() {
     onSuccess: () => { toast.success("Нобуд карда шуд"); qc.invalidateQueries({ queryKey: ["my-orgs"] }); },
     onError: (e) => toast.error(getApiError(e)),
   });
+
 
   if (isLoading) return <PageLoader />;
 
@@ -122,3 +123,6 @@ export default function OrganizationsPage() {
     </div>
   );
 }
+
+
+
