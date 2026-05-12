@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Find your dream job with Artificial Intelligence assistance",
 };
 
+
+
 export default function RootLayout({
   children,
 }: {
@@ -20,3 +22,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+
