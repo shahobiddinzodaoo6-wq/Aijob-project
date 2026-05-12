@@ -11,6 +11,8 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { Building2, Globe, MapPin, Search, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
+
+
 export default function OrganizationsPage() {
     const [page, setPage] = useState(1);
 
@@ -18,6 +20,8 @@ export default function OrganizationsPage() {
         queryKey: ["organizations-paged", page],
         queryFn: () => jobService.getOrganizationsPaged({ pageNumber: page, pageSize: 12 }),
     });
+
+
 
     return (
         <div className="min-h-screen bg-slate-50">
@@ -34,6 +38,9 @@ export default function OrganizationsPage() {
                     </div>
                 </div>
             </div>
+
+
+
 
             <div className="max-w-6xl mx-auto px-4 py-8">
                 {isLoading ? (
@@ -100,3 +107,6 @@ export default function OrganizationsPage() {
         </div>
     );
 }
+
+
+
