@@ -9,6 +9,7 @@ export interface User {
   profile?: import("./user").UserProfile;
 }
 
+
 export interface UserProfile {
   id: string;
   userId: string;
@@ -21,6 +22,7 @@ export interface UserProfile {
   createdAt: string;
 }
 
+
 export interface UserExperience {
   id: string;
   userId: string;
@@ -31,6 +33,7 @@ export interface UserExperience {
   isCurrent: boolean;
   description: string;
 }
+
 
 export interface UserEducation {
   id: string;
@@ -43,10 +46,12 @@ export interface UserEducation {
   description: string;
 }
 
+
 export interface Skill {
   id: string;
   name: string;
 }
+
 
 export interface UserSkill {
   id: string;
@@ -55,6 +60,8 @@ export interface UserSkill {
   skill: Skill;
 }
 
+
+
 export interface ProfileSkill {
   id: string;
   profileId: string;
@@ -62,11 +69,15 @@ export interface ProfileSkill {
   skill: Skill;
 }
 
+
+
 export interface Language {
   id: string;
   name: string;
   code: string;
 }
+
+
 
 export interface ProfileLanguage {
   id: string;
@@ -76,12 +87,16 @@ export interface ProfileLanguage {
   language: Language;
 }
 
+
+
 export interface Endorsement {
   id: string;
   profileSkillId: string;
   endorserId: string;
   createdAt: string;
 }
+
+
 
 export interface Recommendation {
   id: string;
