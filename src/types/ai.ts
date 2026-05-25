@@ -39,6 +39,7 @@ export interface AiSkillGapResponse {
   nextSteps: string[];
 }
 
+
 export interface AiImproveJobRequest {
   jobId: number;
   title: string;
