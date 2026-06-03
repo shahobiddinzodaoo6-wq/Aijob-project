@@ -58,6 +58,8 @@ function forceLogout(reason?: string) {
   }
 }
 
+
+
 // ── Response interceptor: 401 → try refresh once, then logout ────────────
 apiClient.interceptors.response.use(
   (res) => res,
@@ -68,6 +70,7 @@ apiClient.interceptors.response.use(
     if (error.response?.status !== 401 || original?._retry) {
       return Promise.reject(error);
     }
+
 
     console.warn("401 Unauthorized encountered for URL:", original.url);
 
@@ -82,6 +85,7 @@ apiClient.interceptors.response.use(
       return Promise.reject(error);
     }
 
+
     // Queue other 401s while a refresh is already in-flight
     if (isRefreshing) {
       return new Promise<string>((resolve, reject) => {
@@ -95,6 +99,8 @@ apiClient.interceptors.response.use(
         .catch((err) => Promise.reject(err));
     }
 
+
+
     original._retry = true;
     isRefreshing = true;
 
@@ -107,6 +113,7 @@ apiClient.interceptors.response.use(
       forceLogout("No refresh token found in storage");
       return Promise.reject(error);
     }
+
 
     try {
       const { data } = await axios.post(
@@ -164,3 +171,6 @@ export function getApiError(error: unknown): string {
   }
   return "An unknown error occurred";
 }
+
+
+
