@@ -8,10 +8,12 @@ const cleanBaseUrl = (url: string) => {
   return url;
 };
 
+
 export const apiClient = axios.create({
   baseURL: cleanBaseUrl(BASE_URL),
   headers: { "Content-Type": "application/json" },
 });
+
 
 // ── Request interceptor: attach access token ──────────────────────────────
 apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
@@ -25,16 +27,21 @@ apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   return config;
 });
 
+
 // ── Refresh-token helpers ─────────────────────────────────────────────────
 let isRefreshing = false;
 let failedQueue: Array<{ resolve: (v: string) => void; reject: (e: unknown) => void }> = [];
+
 
 function processQueue(error: unknown, token: string | null) {
   failedQueue.forEach((p) => (error ? p.reject(error) : p.resolve(token!)));
   failedQueue = [];
 }
 
+
 import { useAuthStore } from "@/store/AuthStore";
+
+
 
 function forceLogout(reason?: string) {
   if (typeof window === "undefined") return;
