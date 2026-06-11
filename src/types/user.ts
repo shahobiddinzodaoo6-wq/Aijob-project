@@ -105,3 +105,5 @@ export interface Recommendation {
   content: string;
   createdAt: string;
 }
+
+
