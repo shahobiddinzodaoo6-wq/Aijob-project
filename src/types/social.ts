@@ -56,6 +56,7 @@ export interface Conversation {
 
 
 
+
 export interface Message {
   id: number;
   conversationId: number;
