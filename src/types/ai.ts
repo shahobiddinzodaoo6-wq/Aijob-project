@@ -40,6 +40,8 @@ export interface AiSkillGapResponse {
 }
 
 
+
+
 export interface AiImproveJobRequest {
   jobId: number;
   title: string;
@@ -51,6 +53,8 @@ export interface AiImproveJobRequest {
 
 
 
+
+
 export interface AiImproveJobResponse {
   improvedTitle: string;
   improvedDescription: string;
@@ -59,12 +63,16 @@ export interface AiImproveJobResponse {
   suggestedBenefits: string[];
 }
 
+
+
 export interface AiDraftRequest {
   userId: number;
   jobId: number;
   tone: string;
   extraContext?: string;
 }
+
+
 
 
 
@@ -79,9 +87,13 @@ export interface AiDraftMessageRequest {
 
 
 
+
+
 export interface AiDraftResponse {
   subject: string;
   content: string;
 }
+
+
 
 
