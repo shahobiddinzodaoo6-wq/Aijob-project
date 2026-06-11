@@ -71,6 +71,9 @@ export interface Message {
 
 
 
+
+
+
 export interface Notification {
   id: number;
   userId: number;
@@ -81,3 +84,5 @@ export interface Notification {
   isRead: boolean;
   createdAt: string;
 }
+
+
